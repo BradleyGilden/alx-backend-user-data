@@ -22,10 +22,12 @@ class Auth:
 
         new_path = f"{path}/" if path[-1] != '/' else path
 
-        if (all(new_path != p for p in excluded_paths)):
-            return True
-
-        return False
+        for p in excluded_paths:
+            if p[-1] == "*" and path.startswith(p[:-1]):
+                return False
+            elif (new_path == p):
+                return False
+        return True
 
     def authorization_header(self, request=None) -> str:
         """the Flask request object"""
