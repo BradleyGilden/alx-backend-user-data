@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Main 1
+""" Main 2
 """
 import sys
 import os
