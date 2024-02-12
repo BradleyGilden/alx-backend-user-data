@@ -7,6 +7,7 @@ Author: Bradley Dillion Gilden
 Date: 12-02-2024
 """
 import base64
+from typing import TypeVar
 
 
 class BasicAuth:
@@ -45,10 +46,19 @@ class BasicAuth:
         """ returns the user email and password from the Base64 decoded value
         """
         if (decoded_base64_authorization_header is None):
-            return None
+            return (None, None)
         elif (type(decoded_base64_authorization_header) is not str):
-            return None
+            return (None, None)
         elif (":" not in decoded_base64_authorization_header):
-            return None
+            return (None, None)
         else:
             return tuple(decoded_base64_authorization_header.split(":"))
+
+    def user_object_from_credentials(
+            self, user_email: str, user_pwd: str) -> TypeVar('User'):
+        """ returns the User instance based on his email and password.
+        """
+        if (user_email is None or type(user_email) is not str):
+            return None
+        elif (user_pwd is None or type(user_pwd) is not str):
+            return None
