@@ -20,6 +20,9 @@ if (os.environ.get("AUTH_TYPE") == "auth"):
 elif (os.environ.get("AUTH_TYPE") == "basic_auth"):
     from api.v1.auth.basic_auth import BasicAuth
     auth = BasicAuth()
+elif (os.environ.get("AUTH_TYPE") == "session_auth"):
+    from api.v1.auth.session_auth import SessionAuth
+    auth = SessionAuth()
 
 
 @app.before_request
