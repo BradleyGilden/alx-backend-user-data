@@ -39,7 +39,9 @@ In the industry, you should not implement your own authentication system and use
 
   If an argument that does not correspond to a user attribute is passed, raise a ValueError.
 
-* []() - 
+* [auth.py](auth.py) - In this task you will define a _hash_password method that takes in a password string arguments and returns bytes.
+
+  The returned bytes is a salted hash of the input password, hashed with bcrypt.hashpw.
 * []() - 
 * []() - 
 * []() - 
