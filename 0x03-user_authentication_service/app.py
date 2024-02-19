@@ -14,14 +14,14 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=["GET"], strict_slashes=False)
-def home():
+def home() -> str:
     """ simple home route
     """
     return jsonify({"message": "Bienvenue"})
 
 
 @app.route("/users", methods=["POST"], strict_slashes=False)
-def register_user():
+def reg_user() -> str:
     """ registers user data
     """
     fields = request.form

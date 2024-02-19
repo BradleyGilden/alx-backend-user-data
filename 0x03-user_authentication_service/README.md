@@ -55,15 +55,34 @@ In the industry, you should not implement your own authentication system and use
 
   Import the Auth object and instantiate it at the root of the module as such:
 
+  ### Step 4
+
+  In this task, you will implement the Auth.valid_login method. It should expect email and password required arguments and return a boolean.
+
+  Try locating the user by email. If it exists, check the password with bcrypt.checkpw. If it matches return True. In any other case, return
+
+  ### step 5
+
+  In this task you will implement a _generate_uuid function in the auth module. The function should return a string representation of a new UUID. Use the uuid module.
+
+  Note that the method is private to the auth module and should NOT be used outside of it.
+
+  ### Step 6
+  In this task, you will implement the Auth.create_session method. It takes an email string argument and returns the session ID as a string.
+
+  The method should find the user corresponding to the email, generate a new UUID and store it in the database as the user’s session_id, then return the session ID.
 * [app.py](app.py) - 
 
   ### Step 1
+
   Create a Flask app that has a single GET route ("/") and use flask.jsonify to return a JSON payload of the form: `{"message": "Bienvenue"}`
 
   ### Step 2
+
   In this task, you will implement the end-point to register a user. Define a users function that implements the POST /users route.
 
   Import the Auth object and instantiate it at the root of the module as such:
+
 * []() - 
 * []() - 
 * []() - 
