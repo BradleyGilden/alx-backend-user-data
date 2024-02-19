@@ -50,7 +50,7 @@ class DB:
             if key not in columns:
                 raise InvalidRequestError()
 
-        obj = self.__session.query(User).filter_by(**filters).first()
+        obj = self._session.query(User).filter_by(**filters).first()
 
         # checking if object was returned
         if obj is None:
