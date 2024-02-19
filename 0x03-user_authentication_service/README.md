@@ -21,7 +21,16 @@ In the industry, you should not implement your own authentication system and use
   * session_id, a nullable string
   * reset_token, a nullable string
 
-* [db.py](db.py) - Implement the add_user method, which has two required string arguments: email and hashed_password, and returns a User object. The method should save the user to the database. No validations are required at this stage.
+* [db.py](db.py) - 
+
+  ### Step 1
+
+  Implement the add_user method, which has two required string arguments: email and hashed_password, and returns a User object. The method should save the user to the database. No validations are required at this stage.
+
+  ### Step 2
+  Implement the DB.find_user_by method. This method takes in arbitrary keyword arguments and returns the first row found in the users table as filtered by the method’s input arguments. No validation of input arguments required at this point.
+
+  Make sure that SQLAlchemy’s NoResultFound and InvalidRequestError are raised when no results are found, or when wrong query arguments are passed, respectively.
 * []() - 
 * []() - 
 * []() - 
