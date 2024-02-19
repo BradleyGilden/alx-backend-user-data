@@ -39,10 +39,31 @@ In the industry, you should not implement your own authentication system and use
 
   If an argument that does not correspond to a user attribute is passed, raise a ValueError.
 
-* [auth.py](auth.py) - In this task you will define a _hash_password method that takes in a password string arguments and returns bytes.
+* [auth.py](auth.py) -
+
+  ### Step 1
+  In this task you will define a _hash_password method that takes in a password string arguments and returns bytes.
 
   The returned bytes is a salted hash of the input password, hashed with bcrypt.hashpw.
-* []() - 
+
+  ### Step 2
+  create an Auth class with a register_user method that registers a new user to the application database
+
+  ### Step 3
+
+  In this task, you will implement the end-point to register a user. Define a users function that implements the POST /users route.
+
+  Import the Auth object and instantiate it at the root of the module as such:
+
+* [app.py](app.py) - 
+
+  ### Step 1
+  Create a Flask app that has a single GET route ("/") and use flask.jsonify to return a JSON payload of the form: `{"message": "Bienvenue"}`
+
+  ### Step 2
+  In this task, you will implement the end-point to register a user. Define a users function that implements the POST /users route.
+
+  Import the Auth object and instantiate it at the root of the module as such:
 * []() - 
 * []() - 
 * []() - 
