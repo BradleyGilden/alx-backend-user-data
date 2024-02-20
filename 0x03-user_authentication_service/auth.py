@@ -14,6 +14,12 @@ from uuid import uuid4
 from typing import Union
 
 
+def _generate_uuid() -> str:
+    """ generate random uuid's
+    """
+    return str(uuid4())
+
+
 def _hash_password(password: str) -> bytes:
     """ hashes password using the bcrypt module
     """
@@ -46,17 +52,12 @@ class Auth:
         except NoResultFound:
             return False
 
-    def _generate_uuid(self) -> str:
-        """ generate random uuid's
-        """
-        return str(uuid4())
-
     def create_session(self, email: str) -> Union[str, None]:
         """ creates session id's for a user using their email
         """
         try:
             user = self._db.find_user_by(email=email)
-            sid = self._generate_uuid()
+            sid = _generate_uuid()
             self._db.update_user(user.id, session_id=sid)
             return sid
         except NoResultFound:
