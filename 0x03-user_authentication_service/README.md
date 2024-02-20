@@ -139,6 +139,16 @@ In the industry, you should not implement your own authentication system and use
 
   If the email is not registered, respond with a 403 status code. Otherwise, generate a token and respond with a 200 HTTP status and the following JSON payload:
 
+  ### Step 6
+
+  In this task you will implement the update_password function in the app module to respond to the PUT /reset_password route.
+
+  The request is expected to contain form data with fields "email", "reset_token" and "new_password".
+
+  Update the password. If the token is invalid, catch the exception and respond with a 403 HTTP code.
+
+  If the token is valid, respond with a 200 HTTP code and the following JSON payload:
+
 * []() - 
 * []() - 
 * []() - 
