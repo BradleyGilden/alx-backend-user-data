@@ -68,14 +68,24 @@ In the industry, you should not implement your own authentication system and use
   Note that the method is private to the auth module and should NOT be used outside of it.
 
   ### Step 6
+
   In this task, you will implement the Auth.create_session method. It takes an email string argument and returns the session ID as a string.
 
   The method should find the user corresponding to the email, generate a new UUID and store it in the database as the user’s session_id, then return the session ID.
 
   ### step 7
+
   In this task, you will implement the Auth.get_user_from_session_id method. It takes a single session_id string argument and returns the corresponding User or None.
 
   If the session ID is None or no user is found, return None. Otherwise return the corresponding user.
+
+  ### Step 8
+
+  In this task, you will implement Auth.destroy_session. The method takes a single user_id integer argument and returns None.
+
+  The method updates the corresponding user’s session ID to None.
+
+  Remember to only use public methods of self._db
 * [app.py](app.py) - 
 
   ### Step 1
