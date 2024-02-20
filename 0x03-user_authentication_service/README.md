@@ -71,6 +71,11 @@ In the industry, you should not implement your own authentication system and use
   In this task, you will implement the Auth.create_session method. It takes an email string argument and returns the session ID as a string.
 
   The method should find the user corresponding to the email, generate a new UUID and store it in the database as the user’s session_id, then return the session ID.
+
+  ### step 7
+  In this task, you will implement the Auth.get_user_from_session_id method. It takes a single session_id string argument and returns the corresponding User or None.
+
+  If the session ID is None or no user is found, return None. Otherwise return the corresponding user.
 * [app.py](app.py) - 
 
   ### Step 1
@@ -82,6 +87,16 @@ In the industry, you should not implement your own authentication system and use
   In this task, you will implement the end-point to register a user. Define a users function that implements the POST /users route.
 
   Import the Auth object and instantiate it at the root of the module as such:
+
+  ### Step 3
+
+  In this task, you will implement a login function to respond to the POST /sessions route.
+
+  The request is expected to contain form data with "email" and a "password" fields.
+
+  If the login information is incorrect, use flask.abort to respond with a 401 HTTP status.
+
+  Otherwise, create a new session for the user, store it the session ID as a cookie with key "session_id" on the response and return a JSON payload of the form
 
 * []() - 
 * []() - 
