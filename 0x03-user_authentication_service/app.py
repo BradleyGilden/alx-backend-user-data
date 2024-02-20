@@ -48,7 +48,7 @@ def login() -> str:
         abort(401)
 
 
-@app.route("/sessions", methods=["POST"], strict_slashes=False)
+@app.route("/sessions", methods=["DELETE"], strict_slashes=False)
 def logout() -> str:
     """ log out the system by destroying curret user session
     """
