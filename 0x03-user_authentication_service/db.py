@@ -58,19 +58,11 @@ class DB:
 
     def update_user(self, user_id: int, **fields) -> None:
         """updates a user with key value arguments"""
-
-        if type(user_id) is not int:
-            raise ValueError()
-
-        for val in fields.values():
-            if type(val) is not str or len(val) > 250:
-                raise ValueError()
-
-        # get user object from id
-        obj = self._session.query(User).get(user_id)
-
-        # update user entries
-        for key, val in fields.items():
-            setattr(obj, key, val)
-
-        self._session.commit()
+        column_names = [col.name for col in User.__table__.columns]
+        session = self._session
+        user = self.find_user_by(id=user_id)
+        for k, v in fields.items():
+            if k not in column_names:
+                raise ValueError
+            setattr(user, k, v)
+        session.commit()
