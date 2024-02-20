@@ -7,7 +7,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
-from typing import Dict
 from user import Base
 from user import User
 
@@ -41,7 +40,7 @@ class DB:
         self._session.commit()
         return obj
 
-    def find_user_by(self, **filters: Dict) -> User:
+    def find_user_by(self, **filters) -> User:
         """ returns user depending on search filters
         """
         # checking for valid column names
@@ -57,7 +56,7 @@ class DB:
             raise NoResultFound()
         return obj
 
-    def update_user(self, user_id: int, **fields: Dict) -> None:
+    def update_user(self, user_id: int, **fields) -> None:
         """updates a user with key value arguments"""
 
         if type(user_id) is not int:
