@@ -149,11 +149,12 @@ In the industry, you should not implement your own authentication system and use
 
   If the token is valid, respond with a 200 HTTP code and the following JSON payload:
 
-* []() - 
-* []() - 
-* []() - 
-* []() - 
-* []() - 
-* []() - 
-* []() - 
-* []() - 
+* [main.py](main.py) - Create a new module called main.py. Create one function for each of the following tasks. Use the requests module to query your web server for the corresponding end-point. Use assert to validate the response’s expected status code and payload (if any) for each task.
+  * register_user(email: str, password: str) -> None
+  * log_in_wrong_password(email: str, password: str) -> None
+  * log_in(email: str, password: str) -> str
+  * profile_unlogged() -> None
+  * profile_logged(session_id: str) -> None
+  * log_out(session_id: str) -> None
+  * reset_password_token(email: str) -> str
+  * update_password(email: str, reset_token: str, new_password: str) -> None
