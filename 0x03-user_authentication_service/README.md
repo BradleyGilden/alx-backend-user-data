@@ -123,6 +123,14 @@ In the industry, you should not implement your own authentication system and use
 
   Find the user with the requested session ID. If the user exists destroy the session and redirect the user to GET /. If the user does not exist, respond with a 403 HTTP status.
 
+  ### Step 5
+
+  In this task, you will implement a get_reset_password_token function to respond to the POST /reset_password route.
+
+  The request is expected to contain form data with the "email" field.
+
+  If the email is not registered, respond with a 403 status code. Otherwise, generate a token and respond with a 200 HTTP status and the following JSON payload:
+
 * []() - 
 * []() - 
 * []() - 
