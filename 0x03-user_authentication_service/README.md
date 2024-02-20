@@ -93,6 +93,14 @@ In the industry, you should not implement your own authentication system and use
 
   Find the user corresponding to the email. If the user does not exist, raise a ValueError exception. If it exists, generate a UUID and update the user’s reset_token database field. Return the token.
 
+  ### Step 10
+
+  In this task, you will implement the Auth.update_password method. It takes reset_token string argument and a password string argument and returns None.
+
+  Use the reset_token to find the corresponding user. If it does not exist, raise a ValueError exception.
+
+  Otherwise, hash the password and update the user’s hashed_password field with the new hashed password and the reset_token field to None.
+
 * [app.py](app.py) - 
 
   ### Step 1
