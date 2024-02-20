@@ -52,7 +52,7 @@ def login() -> str:
 def logout() -> str:
     """ log out the system by destroying curret user session
     """
-    sid = request.cookies["session_id"]
+    sid = request.cookies.get("session_id")
     user = AUTH.get_user_from_session_id(sid)
     if user:
         AUTH.destroy_session(user.id)
