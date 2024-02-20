@@ -6,7 +6,7 @@ This module contains the routes to the flask application
 Author: Bradley Dillion Gilden
 Date: 19-02-2024
 """
-from flask import Flask, jsonify, request, make_response, abort
+from flask import Flask, jsonify, request, make_response, abort, redirect
 from auth import Auth
 
 AUTH = Auth()
@@ -46,6 +46,19 @@ def login() -> str:
         return resp
     else:
         abort(401)
+
+
+@app.route("/sessions", methods=["POST"], strict_slashes=False)
+def logout() -> str:
+    """ log out the system by destroying curret user session
+    """
+    sid = request.cookies["session_id"]
+    user = AUTH.get_user_from_session_id(sid)
+    if user:
+        AUTH.destroy_session(user.id)
+        return redirect("/")
+    else:
+        abort(403)
 
 
 if __name__ == "__main__":

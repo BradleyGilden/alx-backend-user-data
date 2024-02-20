@@ -108,6 +108,14 @@ In the industry, you should not implement your own authentication system and use
 
   Otherwise, create a new session for the user, store it the session ID as a cookie with key "session_id" on the response and return a JSON payload of the form
 
+  ### Step 4
+
+  In this task, you will implement a logout function to respond to the DELETE /sessions route.
+
+  The request is expected to contain the session ID as a cookie with key "session_id".
+
+  Find the user with the requested session ID. If the user exists destroy the session and redirect the user to GET /. If the user does not exist, respond with a 403 HTTP status.
+
 * []() - 
 * []() - 
 * []() - 
