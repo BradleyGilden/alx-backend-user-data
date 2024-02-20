@@ -86,6 +86,13 @@ In the industry, you should not implement your own authentication system and use
   The method updates the corresponding user’s session ID to None.
 
   Remember to only use public methods of self._db
+
+  ### Step 9
+
+  In this task, you will implement the Auth.get_reset_password_token method. It take an email string argument and returns a string.
+
+  Find the user corresponding to the email. If the user does not exist, raise a ValueError exception. If it exists, generate a UUID and update the user’s reset_token database field. Return the token.
+
 * [app.py](app.py) - 
 
   ### Step 1
